@@ -11,22 +11,23 @@ import android.widget.TextView;
 
 public class Main3Activity extends AppCompatActivity {
 
-    TextView timerTextView;
+    Button timerTextView;
     long startTime = 0;
+    int score = 0;
 
     //runs without a timer by reposting this handler at the end of the runnable
     Handler timerHandler = new Handler();
+    int count = 60;
     Runnable timerRunnable = new Runnable() {
         @Override
         public void run() {
-            long millis = System.currentTimeMillis() - startTime;
-            int seconds = (int) (millis / 1000);
-            int minutes = seconds / 60;
-            seconds = seconds % 60;
-
-            timerTextView.setText(String.format("%d:%02d", minutes, seconds));
-
-            timerHandler.postDelayed(this, 500);
+            count--;
+            timerTextView.setText(count + " s");
+            if (count==0){
+                Intent intent=new Intent(Main3Activity.this, Main4Activity.class);
+                startActivity(intent);
+            }
+            timerHandler.postDelayed(this, 1000);
         }
     };
 
@@ -37,10 +38,7 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        timerTextView = (TextView) findViewById(R.id.timerTextView);
-
-        Button b = (Button) findViewById(R.id.buttonClock);
-        b.setText("start");
+        timerTextView = (Button) findViewById(R.id.timerTextView);
 
     }
 
@@ -48,24 +46,11 @@ public class Main3Activity extends AppCompatActivity {
 
     public void onClick(View v) {
         Button b = (Button) v;
-
-        if (b.getText().equals("stop")) {
-            timerHandler.removeCallbacks(timerRunnable);
-            b.setText("start");
-        } else {
-            startTime = System.currentTimeMillis();
+        b.setEnabled(false);
+        startTime = System.currentTimeMillis();
             timerHandler.postDelayed(timerRunnable, 0);
-            h3.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    //Do something after 5000ms
-                    Intent intent=new Intent(Main3Activity.this, Main4Activity.class);
-                    startActivity(intent);
-                }
-            }, 5000);
-            b.setText("stop");
+            b.setText("En cours");
         }
-    }
 
 
     public void onPause() {
@@ -73,5 +58,20 @@ public class Main3Activity extends AppCompatActivity {
         timerHandler.removeCallbacks(timerRunnable);
         Button b = (Button)findViewById(R.id.buttonClock);
         b.setText("start");
+    }
+
+    public void clickBad(View view)
+    {
+        score--;
+        Button sc = findViewById(R.id.Score);
+        sc.setText("Score : " + score);
+    }
+
+    public void clickGood(View view)
+    {
+        count++;
+        score+=3;
+        Button sc = findViewById(R.id.Score);
+        sc.setText("Score : " + score);
     }
 }
