@@ -3,6 +3,7 @@ package com.example.colorrun;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -21,6 +22,8 @@ public class Main5Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main5);
         ArrayList<Joueur> joueur= new ArrayList<>();
         joueur.add(new Joueur("Romain", 244));
+        joueur.add(new Joueur("Marion", 242));
+        ((ListView)findViewById(R.id.list_view)).setAdapter(new ListViewAdapter(joueur));
 
     }
 }

@@ -9,9 +9,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ListViewAdapter extends BaseAdapter {
-    private ArrayList < Joueur > list;
+    private ArrayList <Joueur> list;
 
-    public ListViewAdapter(ArrayList < Joueur > list) {
+    public ListViewAdapter(ArrayList <Joueur> list) {
         this.list = list;
     }
 

@@ -14,14 +14,15 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
     }
 
-    public void goActivity3(View view){
+    public void goActivity3(View view) {
         Intent intent = new Intent(this, Main3Activity.class);
         startActivity(intent);
 
 
     }
-    //public void goActivity5(View view){
-      //  Intent intent = new Intent(this, Main5Activity.class);
-        //startActivity(intent);
-    //}
+
+    public void goActivity5(View view) {
+        Intent intent = new Intent(this, Main5Activity.class);
+        startActivity(intent);
+    }
 }

@@ -8,7 +8,7 @@
     tools:context=".Main3Activity">
 
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:stretchColumns="*"
@@ -21,8 +21,7 @@
             android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"
-            />
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button2"
