@@ -20,8 +20,8 @@ public class Main2Activity extends AppCompatActivity {
 
 
     }
-    public void goActivity5(View view){
-        Intent intent = new Intent(this, Main5Activity.class);
-        startActivity(intent);
-    }
+    //public void goActivity5(View view){
+      //  Intent intent = new Intent(this, Main5Activity.class);
+        //startActivity(intent);
+    //}
 }

@@ -19,6 +19,7 @@ import java.util.Random;
 public class Main3Activity extends AppCompatActivity {
 
     Button timerTextView;
+    Button butCorrect;
     long startTime = 0;
     int score = 0;
     ArrayList<String> listColor = generateColorList();
@@ -45,13 +46,7 @@ public class Main3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-
-        Button buttonReponse = findViewById(R.id.buttonReponse);
-        buttonReponse.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Button butCorrect = newResponseColor();
-            }
-        });
+        timerTextView = findViewById(R.id.timerTextView);
 
     }
 
@@ -62,10 +57,20 @@ public class Main3Activity extends AppCompatActivity {
         startTime = System.currentTimeMillis();
             timerHandler.postDelayed(timerRunnable, 0);
             b.setText("En cours");
-            Button but = newResponseColor();
-            fillButtonsColor(but);
+            newResponseColor();
+            fillButtonsColor();
         }
 
+    public void checkClick(View view){
+        if (view==butCorrect){
+            clickGood();
+        newResponseColor();
+        fillButtonsColor();
+        }
+        else{
+            clickBad();
+        }
+    }
 
     public void onPause() {
         super.onPause();
@@ -89,8 +94,8 @@ public class Main3Activity extends AppCompatActivity {
         sc.setText("Score : " + score);
     }
 
-    public void generateRandomColor(Button button, ArrayList<String> listColor){
-        int rand = getRandomNumberInRange(0,3);
+    public void generateRandomColor(Button button, int min, int max){
+        int rand = getRandomNumberInRange(min,max);
         String randColor = listColor.get(rand);
         button.getBackground().setColorFilter(Color.parseColor(randColor), PorterDuff.Mode.DARKEN);
 
@@ -112,14 +117,14 @@ public class Main3Activity extends AppCompatActivity {
         return colorList;
     }
 
-    public Button newResponseColor(){
+    public void newResponseColor(){
         Button b = findViewById(R.id.buttonReponse);
         int rand = getRandomNumberInRange(0,3);
         String randColor = listColor.get(rand);
         b.getBackground().setColorFilter(Color.parseColor(randColor), PorterDuff.Mode.DARKEN);
-        Button but = generateRandomButton();
-        but.getBackground().setColorFilter(Color.parseColor(randColor), PorterDuff.Mode.DARKEN);
-        return  but;
+        butCorrect = generateRandomButton();
+        butCorrect.getBackground().setColorFilter(Color.parseColor(randColor), PorterDuff.Mode.DARKEN);
+        listColor.remove(rand);
     }
 
     public Button generateRandomButton(){
@@ -130,16 +135,17 @@ public class Main3Activity extends AppCompatActivity {
         return but;
     }
 
-    public void fillButtonsColor(Button butCorrect){
+    public void fillButtonsColor(){
         TableLayout layout = findViewById(R.id.layout1);
         for(int i=0;i<4;i++){
             for (int j = 0; j < 4; j++) {
                 Button but = (Button) ((TableRow) layout.getChildAt(i)).getChildAt(j);
                 if (but != butCorrect) {
-                    generateRandomColor(but, listColor);
+                    generateRandomColor(but,0,2);
                 }
             }
         }
+        listColor = generateColorList();
     }
 
 }
