@@ -21,7 +21,7 @@ public class Main3Activity extends AppCompatActivity {
     Button timerTextView;
     long startTime = 0;
     int score = 0;
-    ArrayList<String> listColor;
+    ArrayList<String> listColor = generateColorList();
 
     //runs without a timer by reposting this handler at the end of the runnable
     Handler timerHandler = new Handler();
@@ -46,10 +46,7 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        timerTextView = (Button) findViewById(R.id.timerTextView);
-        listColor = generateColorList();
         Button buttonReponse = findViewById(R.id.buttonReponse);
-        generateRandomColor(buttonReponse,listColor);
         buttonReponse.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Button butCorrect = newResponseColor();
@@ -65,6 +62,8 @@ public class Main3Activity extends AppCompatActivity {
         startTime = System.currentTimeMillis();
             timerHandler.postDelayed(timerRunnable, 0);
             b.setText("En cours");
+            Button but = newResponseColor();
+            fillButtonsColor(but);
         }
 
 
@@ -130,5 +129,18 @@ public class Main3Activity extends AppCompatActivity {
         Button but = (Button) ((TableRow)layout.getChildAt(row)).getChildAt(column);
         return but;
     }
+
+    public void fillButtonsColor(Button butCorrect){
+        TableLayout layout = findViewById(R.id.layout1);
+        for(int i=0;i<4;i++){
+            for (int j = 0; j < 4; j++) {
+                Button but = (Button) ((TableRow) layout.getChildAt(i)).getChildAt(j);
+                if (but != butCorrect) {
+                    generateRandomColor(but, listColor);
+                }
+            }
+        }
+    }
+
 }
 
