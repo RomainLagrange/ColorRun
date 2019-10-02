@@ -34,6 +34,7 @@
         android:layout_width="158dp"
         android:layout_height="64dp"
         android:text="MEILLEURS SCORES"
+        android:onClick="goActivity5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
