@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ColorRun</string>
+    <string name="joueur1">JOUEUR1</string>
+    <string name="enregistrer">Enregistrer</string>
+    <string name="nouvelle_partie">NOUVELLE PARTIE</string>
+    <string name="meilleurs_scores">MEILLEURS SCORES</string>
+    <string name="score">Score</string>
 </resources>

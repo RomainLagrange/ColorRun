@@ -114,7 +114,7 @@
             android:id="@+id/button13"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:backgroundTint="#00FFFFFF"
+            android:backgroundTint="#F2F2F2"
             android:onClick="checkClick" />
 
         <Button
@@ -169,7 +169,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="false"
-            android:text="Score"/>
+            android:text="@string/score"/>
     </TableRow>
 
 
