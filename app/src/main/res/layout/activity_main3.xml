@@ -21,25 +21,29 @@
             android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:backgroundTint="#00FFFFFF"
             android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
     </TableRow>
 
     <TableRow android:layout_weight="1" >
@@ -48,25 +52,29 @@
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button6"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button7"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button8"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
     </TableRow>
 
     <TableRow android:layout_weight="1" >
@@ -75,25 +83,29 @@
             android:id="@+id/button9"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button10"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button11"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button12"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
     </TableRow>
 
     <TableRow android:layout_weight="1" >
@@ -102,25 +114,29 @@
             android:id="@+id/button13"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button14"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button15"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
 
         <Button
             android:id="@+id/button16"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:onClick="checkClick"/>
+            android:backgroundTint="#00FFFFFF"
+            android:onClick="checkClick" />
     </TableRow>
 
     <TableRow android:layout_weight="1" >
@@ -141,8 +157,11 @@
 
         <Button
             android:id="@+id/buttonReponse"
+            android:background="@drawable/border"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:singleLine="false"
+            android:soundEffectsEnabled="false"
             android:text="" />
 
         <Button
