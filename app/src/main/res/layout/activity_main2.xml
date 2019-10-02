@@ -4,15 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00FFFFFF"
+    android:backgroundTintMode="add"
     tools:context=".Main2Activity">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="381dp"
-        android:layout_height="434dp"
+        android:layout_width="339dp"
+        android:layout_height="289dp"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053"
         app:srcCompat="@drawable/logo" />
 
     <Button
@@ -20,8 +27,9 @@
         android:layout_width="156dp"
         android:layout_height="57dp"
         android:layout_marginBottom="108dp"
-        android:text="NOUVELLE PARTIE"
+        android:backgroundTint="#00BCD4"
         android:onClick="goActivity3"
+        android:text="NOUVELLE PARTIE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -33,8 +41,9 @@
         android:id="@+id/button5"
         android:layout_width="158dp"
         android:layout_height="64dp"
-        android:text="MEILLEURS SCORES"
+        android:backgroundTint="#00BCD4"
         android:onClick="goActivity5"
+        android:text="MEILLEURS SCORES"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
