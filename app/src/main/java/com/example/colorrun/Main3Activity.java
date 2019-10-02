@@ -34,6 +34,8 @@ public class Main3Activity extends AppCompatActivity {
             timerTextView.setText(count + " s");
             if (count==0){
                 Intent intent=new Intent(Main3Activity.this, Main4Activity.class);
+                intent.putExtra("score", score);
+                intent.putExtra("name",getIntent().getStringExtra("name"));
                 startActivity(intent);
             }
             timerHandler.postDelayed(this, 1000);

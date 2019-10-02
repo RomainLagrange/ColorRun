@@ -30,7 +30,7 @@
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toTopOf="@+id/editView2"
+        app:layout_constraintBottom_toTopOf="@+id/nameEdit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/editView2"
+        android:id="@+id/nameEdit"
         android:layout_width="177dp"
         android:layout_height="60dp"
         android:singleLine="true"
