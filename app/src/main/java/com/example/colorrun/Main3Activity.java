@@ -38,6 +38,9 @@ public class Main3Activity extends AppCompatActivity {
                 intent.putExtra("name",getIntent().getStringExtra("name"));
                 startActivity(intent);
             }
+            if (count==5){
+                timerTextView.getBackground().setColorFilter(Color.parseColor("#fa3d3d"), PorterDuff.Mode.DARKEN);
+            }
             timerHandler.postDelayed(this, 1000);
         }
     };
