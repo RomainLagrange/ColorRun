@@ -25,7 +25,7 @@ public class Main5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
 
-        ArrayList<Joueur> listJoueurs = null;
+        ArrayList<Joueur> listJoueurs = new ArrayList<>();
         try {
             listJoueurs = loadPlayer();
         } catch (IOException e) {
@@ -45,6 +45,7 @@ public class Main5Activity extends AppCompatActivity {
 
 
         File file = new File(getApplicationContext().getFilesDir(), "dataPlayer");
+
         if (file.exists()) {
             //Do something
             FileInputStream fis = getApplicationContext().openFileInput("dataPlayer");

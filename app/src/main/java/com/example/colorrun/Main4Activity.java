@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,6 +22,7 @@ public class Main4Activity extends AppCompatActivity {
 
     int score;
     String name;
+    ArrayList<Joueur> playerList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,29 +40,40 @@ public class Main4Activity extends AppCompatActivity {
     public void savePlayer(Joueur player) throws Exception {
         FileOutputStream fos = getApplicationContext().openFileOutput("dataPlayer", Context.MODE_PRIVATE);
         ObjectOutputStream os = new ObjectOutputStream(fos);
-        ArrayList<Joueur> playerList = loadPlayer();
+        loadPlayer();
+        playerList.add(player);
         os.writeObject(playerList);
         os.close();
         fos.close();
-
     }
 
-    public ArrayList<Joueur> loadPlayer() throws IOException, ClassNotFoundException {
+    public void loadPlayer() throws Exception  {
 
+        try
+        {
+            FileInputStream fis = new FileInputStream("dataPlayer");
+            ObjectInputStream ois = new ObjectInputStream(fis);
 
-        File file = new File(getApplicationContext().getFilesDir(), "dataPlayer");
-        if (file.exists()) {
-            //Do something
-            FileInputStream fis = getApplicationContext().openFileInput("dataPlayer");
-            ObjectInputStream is = new ObjectInputStream(fis);
-            ArrayList<Joueur> playerList = (ArrayList<Joueur>) is.readObject();
-            is.close();
+            playerList = (ArrayList) ois.readObject();
+
+            ois.close();
             fis.close();
-            return playerList;
-        } else {
-            //Nothing
-            ArrayList<Joueur> toto = new ArrayList<>();
-            return toto;
+        } catch (FileNotFoundException fnf){
+            fnf.printStackTrace();
+            FileOutputStream fos = getApplicationContext().openFileOutput("dataPlayer", Context.MODE_PRIVATE);
+            ObjectOutputStream os = new ObjectOutputStream(fos);
+            os.writeObject(playerList);
+            os.close();
+            fos.close();
+        } catch (IOException ioe)
+        {
+            ioe.printStackTrace();
+            return;
+        } catch (ClassNotFoundException c)
+        {
+            System.out.println("Class not found");
+            c.printStackTrace();
+            return;
         }
     }
 
