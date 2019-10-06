@@ -15,13 +15,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText nameField = (EditText)findViewById(R.id.nameEdit);
-        name=nameField.getText().toString();
     }
 
     public void activity(View view){
+        EditText nameField = (EditText)findViewById(R.id.nameEdit);
+        name=nameField.getText().toString();
+        Globals g = Globals.getInstance();
+        g.setName(name);
         Intent intent = new Intent(this, Main2Activity.class);
-        intent.putExtra("name",name);
         startActivity(intent);
     }
 

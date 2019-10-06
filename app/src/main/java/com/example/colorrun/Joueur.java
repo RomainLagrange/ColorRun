@@ -1,6 +1,7 @@
 package com.example.colorrun;
 
 import java.io.Serializable;
+import java.util.Collections;
 
 public class Joueur implements Serializable {
     private String name;
@@ -18,4 +19,5 @@ public class Joueur implements Serializable {
     public int getScore() {
         return score;
     }
+
 }
