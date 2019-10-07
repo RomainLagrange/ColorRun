@@ -2,6 +2,8 @@ package com.example.colorrun;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -73,8 +75,25 @@ public class Main4Activity extends AppCompatActivity {
     public void saveClick(View view) throws Exception {
         Joueur player = new Joueur(name,score);
         savePlayer(player);
-        Intent intent = new Intent(this, Main2Activity.class);
-        startActivity(intent);
+        new AlertDialog.Builder(Main4Activity.this)
+                .setTitle("Information")
+                .setMessage("Score bien enregistré ! ")
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                        Intent intent = new Intent(Main4Activity.this, Main5Activity.class);
+                        startActivity(intent);
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+
     }
 
 }

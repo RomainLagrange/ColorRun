@@ -3,6 +3,7 @@ package com.example.colorrun;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
@@ -40,13 +41,13 @@ public class Main3Activity extends AppCompatActivity {
             ProgressBar progressBar = findViewById(R.id.progressBar);
             progressBar.setProgress(progress);
             if (progress<30) {
-                progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#51fa3d"), PorterDuff.Mode.DARKEN);
+                progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#51fa3d")));
             }
             else if (progress<50) {
-                progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#f49409"), PorterDuff.Mode.DARKEN);
+                progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#f49409")));
             }
             else {
-                progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#f41b09"), PorterDuff.Mode.DARKEN);
+                progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#f41b09")));
             }
             if (count==0){
                 Intent intent=new Intent(Main3Activity.this, Main4Activity.class);
