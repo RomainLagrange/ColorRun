@@ -75,7 +75,7 @@ public class Main4Activity extends AppCompatActivity {
     public void saveClick(View view) throws Exception {
         Joueur player = new Joueur(name,score);
         savePlayer(player);
-        new AlertDialog.Builder(Main4Activity.this)
+        AlertDialog dialog = new AlertDialog.Builder(Main4Activity.this)
                 .setTitle("Information")
                 .setMessage("Score bien enregistré ! ")
 
@@ -93,6 +93,7 @@ public class Main4Activity extends AppCompatActivity {
                 .setNegativeButton(android.R.string.no, null)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setEnabled(false);
 
     }
 
