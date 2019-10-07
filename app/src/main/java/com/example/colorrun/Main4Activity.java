@@ -76,8 +76,8 @@ public class Main4Activity extends AppCompatActivity {
         Joueur player = new Joueur(name,score);
         savePlayer(player);
         AlertDialog dialog = new AlertDialog.Builder(Main4Activity.this)
-                .setTitle("Information")
-                .setMessage("Score bien enregistré ! ")
+                .setTitle(R.string.Information)
+                .setMessage(R.string.bienenregistre)
 
                 // Specifying a listener allows you to take an action before dismissing the dialog.
                 // The dialog is automatically dismissed when a dialog button is clicked.
@@ -96,5 +96,8 @@ public class Main4Activity extends AppCompatActivity {
         dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setEnabled(false);
 
     }
-
+    public void goActivity2(View view) {
+        Intent intent = new Intent(this, Main2Activity.class);
+        startActivity(intent);
+    }
 }

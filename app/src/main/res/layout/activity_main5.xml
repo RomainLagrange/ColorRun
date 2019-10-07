@@ -1,12 +1,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listPlayer"
-        android:layout_width="364dp"
-        android:layout_height="436dp"
+        android:layout_width="322dp"
+        android:layout_height="507dp"
         android:layout_centerInParent="true"
+
         android:scrollbars="vertical" />
+
 
 </RelativeLayout>

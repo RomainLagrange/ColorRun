@@ -54,7 +54,7 @@ public class Main3Activity extends AppCompatActivity {
                 intent.putExtra("score", score);
                 startActivity(intent);
             }
-            if (count==5){
+            if (count==10){
                 timerTextView.getBackground().setColorFilter(Color.parseColor("#fa3d3d"), PorterDuff.Mode.DARKEN);
             }
             timerHandler.postDelayed(this, 1000);
