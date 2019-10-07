@@ -30,11 +30,15 @@ public class Main3Activity extends AppCompatActivity {
     //runs without a timer by reposting this handler at the end of the runnable
     Handler timerHandler = new Handler();
     int count = 60;
+    int progress = 0;
     Runnable timerRunnable = new Runnable() {
         @Override
         public void run() {
             count--;
+            progress++;
             timerTextView.setText(count + " s");
+            ProgressBar progressBar = findViewById(R.id.progressBar);
+            progressBar.setProgress(progress);
             if (count==0){
                 Intent intent=new Intent(Main3Activity.this, Main4Activity.class);
                 intent.putExtra("score", score);
@@ -154,24 +158,7 @@ public class Main3Activity extends AppCompatActivity {
         }
         listColor = generateColorList();
     }
-    public void ProgressBar()
-    {
-        int percent = (int) ((count/60)*100);
-        ProgressBar myprogressbar = (ProgressBar)findViewById(R.id.progressBar);
-        Resources res = getResources();
-        Rect bounds = myprogressbar.getProgressDrawable().getBounds();
 
-        if(percent >= 50)
-        {
-            myprogressbar.setProgressDrawable(res.getDrawable(R.drawable.layer_list));
-        }
-        else
-        {
-            myprogressbar.setProgressDrawable(res.getDrawable(R.drawable.layer_list));
-        }
-        myprogressbar.getProgressDrawable().setBounds(bounds);
-        myprogressbar.setProgress(percent);
-    }
 }
 
 
