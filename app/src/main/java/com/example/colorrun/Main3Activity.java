@@ -3,12 +3,15 @@ package com.example.colorrun;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -60,7 +63,7 @@ public class Main3Activity extends AppCompatActivity {
         b.setEnabled(false);
         startTime = System.currentTimeMillis();
             timerHandler.postDelayed(timerRunnable, 0);
-            b.setText("En cours");
+            b.setText(R.string.Running);
             newResponseColor();
             fillButtonsColor();
         }
@@ -151,6 +154,27 @@ public class Main3Activity extends AppCompatActivity {
         }
         listColor = generateColorList();
     }
+    public void ProgressBar()
+    {
+        int percent = (int) ((count/60)*100);
+        ProgressBar myprogressbar = (ProgressBar)findViewById(R.id.progressBar);
+        Resources res = getResources();
+        Rect bounds = myprogressbar.getProgressDrawable().getBounds();
 
+        if(percent >= 50)
+        {
+            myprogressbar.setProgressDrawable(res.getDrawable(R.drawable.layer_list));
+        }
+        else
+        {
+            myprogressbar.setProgressDrawable(res.getDrawable(R.drawable.layer_list));
+        }
+        myprogressbar.getProgressDrawable().setBounds(bounds);
+        myprogressbar.setProgress(percent);
+    }
 }
+
+
+
+
 

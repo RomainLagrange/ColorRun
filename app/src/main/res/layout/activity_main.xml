@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00FFFFFF"
+    android:transitionGroup="true"
     tools:context=".MainActivity">
+
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00BCD4"
+        android:focusable="auto"
         android:onClick="activity"
         android:saveEnabled="true"
-        android:text="VALIDER"
+        android:text="@string/valider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -29,6 +31,7 @@
         android:adjustViewBounds="true"
         android:background="#00FFFFFF"
         android:backgroundTint="#00FFFFFF"
+        android:focusable="auto"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toTopOf="@+id/nameEdit"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,6 +44,7 @@
         android:id="@+id/nameEdit"
         android:layout_width="177dp"
         android:layout_height="60dp"
+        android:focusable="auto"
         android:singleLine="true"
         android:text="@string/joueur1"
         app:layout_constraintBottom_toBottomOf="parent"
