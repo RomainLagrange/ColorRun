@@ -39,6 +39,15 @@ public class Main3Activity extends AppCompatActivity {
             timerTextView.setText(count + " s");
             ProgressBar progressBar = findViewById(R.id.progressBar);
             progressBar.setProgress(progress);
+            if (progress<30) {
+                progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#51fa3d"), PorterDuff.Mode.DARKEN);
+            }
+            else if (progress<50) {
+                progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#f49409"), PorterDuff.Mode.DARKEN);
+            }
+            else {
+                progressBar.getProgressDrawable().setColorFilter(Color.parseColor("#f41b09"), PorterDuff.Mode.DARKEN);
+            }
             if (count==0){
                 Intent intent=new Intent(Main3Activity.this, Main4Activity.class);
                 intent.putExtra("score", score);
@@ -100,6 +109,7 @@ public class Main3Activity extends AppCompatActivity {
     public void clickGood()
     {
         count++;
+        progress--;
         score+=3;
         Button sc = findViewById(R.id.Score);
         sc.setText("Score : " + score);
