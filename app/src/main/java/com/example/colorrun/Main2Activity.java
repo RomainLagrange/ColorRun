@@ -14,8 +14,15 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
     }
 
-    public void goActivity3(View view) {
+    public void goActivity3easy(View view) {
         Intent intent = new Intent(this, Main3Activity.class);
+        intent.putExtra("difficulty", "e");
+        startActivity(intent);
+    }
+
+    public void goActivity3hard(View view) {
+        Intent intent = new Intent(this, Main3Activity.class);
+        intent.putExtra("difficulty", "h");
         startActivity(intent);
     }
 

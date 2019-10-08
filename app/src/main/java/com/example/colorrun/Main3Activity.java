@@ -26,7 +26,8 @@ public class Main3Activity extends AppCompatActivity {
     Button butCorrect;
     long startTime = 0;
     int score = 0;
-    ArrayList<String> listColor = generateColorList();
+    ArrayList<String> listColor;
+    String difficulty;
 
     //runs without a timer by reposting this handler at the end of the runnable
     Handler timerHandler = new Handler();
@@ -68,6 +69,8 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         timerTextView = findViewById(R.id.timerTextView);
+        difficulty = getIntent().getStringExtra("difficulty");
+        listColor = generateColorList();
 
     }
 
@@ -132,16 +135,31 @@ public class Main3Activity extends AppCompatActivity {
 
     public ArrayList<String> generateColorList(){
         ArrayList<String> colorList = new ArrayList<String>();
-        colorList.add("#3386FF");
-        colorList.add("#33FFF0");
-        colorList.add("#33FF4F");
-        colorList.add("#7133FF");
+        if (difficulty.equals("e")) {
+            colorList.add("#3386FF");
+            colorList.add("#33FFF0");
+            colorList.add("#33FF4F");
+            colorList.add("#7133FF");
+        }
+        else {
+            colorList.add("#f41b09");
+            colorList.add("#f49b09");
+            colorList.add("#e4f705");
+            colorList.add("#6ff705");
+            colorList.add("#05f7a3");
+            colorList.add("#056cf7");
+            colorList.add("#7a05f7");
+            colorList.add("#f705cb");
+        }
         return colorList;
     }
 
     public void newResponseColor(){
         Button b = findViewById(R.id.buttonReponse);
-        int rand = getRandomNumberInRange(0,3);
+        int rand;
+        if (difficulty.equals("e")){
+            rand = getRandomNumberInRange(0,3);}
+        else { rand = getRandomNumberInRange(0,7);}
         String randColor = listColor.get(rand);
         b.getBackground().setColorFilter(Color.parseColor(randColor), PorterDuff.Mode.DARKEN);
         butCorrect = generateRandomButton();
@@ -163,7 +181,10 @@ public class Main3Activity extends AppCompatActivity {
             for (int j = 0; j < 4; j++) {
                 Button but = (Button) ((TableRow) layout.getChildAt(i)).getChildAt(j);
                 if (but != butCorrect) {
-                    generateRandomColor(but,0,2);
+                    if (difficulty.equals("e")){
+                        generateRandomColor(but,0,2);}
+                    else { generateRandomColor(but,0,6);}
+
                 }
             }
         }

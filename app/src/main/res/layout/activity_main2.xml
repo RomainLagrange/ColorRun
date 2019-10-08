@@ -8,6 +8,7 @@
     android:backgroundTintMode="add"
     tools:context=".Main2Activity">
 
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="339dp"
@@ -27,31 +28,49 @@
         android:id="@+id/button4"
         android:layout_width="156dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginStart="20dp"
         android:backgroundTint="#00BCD4"
         android:focusable="auto"
-        android:onClick="goActivity3"
-        android:text="@string/nouvelle_partie"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:onClick="goActivity3easy"
+        android:text="@string/normal"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toStartOf="@+id/buttonHard"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/buttonHard"
+        android:layout_width="156dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#00BCD4"
+        android:focusable="auto"
+        android:onClick="goActivity3hard"
+        android:text="@string/hard"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="158dp"
         android:layout_height="64dp"
+        android:layout_marginBottom="41dp"
+        android:layout_marginTop="21dp"
         android:backgroundTint="#00BCD4"
         android:focusable="auto"
         android:onClick="goActivity5"
         android:text="@string/meilleurs_scores"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.665" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
