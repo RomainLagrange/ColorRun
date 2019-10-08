@@ -3,14 +3,14 @@
     <string name="app_name">ColorRun</string>
     <string name="joueur1">JOUEUR1</string>
     <string name="enregistrer">Enregistrer</string>
-    <string name="normal">NORMAL</string>
+    <string name="normal">MODE 1</string>
     <string name="meilleurs_scores">MEILLEURS SCORES</string>
     <string name="valider">valider</string>
     <string name="Running">En cours</string>
     <string name="retour">Retour</string>
     <string name="Information">Information</string>
     <string name="bienenregistre">Score enregistré !</string>
-    <string name="hard">DIFICILLE</string>
+    <string name="hard">MODE 2</string>
 
 
 </resources>

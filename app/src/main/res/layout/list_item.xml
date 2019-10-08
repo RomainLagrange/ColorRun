@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
     android:orientation="vertical">
 
     <TextView
@@ -11,7 +10,6 @@
         android:layout_width="163dp"
         android:layout_height="48dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="15dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         tools:text="Joueur" />
 
@@ -23,4 +21,12 @@
         android:ellipsize="end"
         android:textAppearance="?android:attr/textAppearanceMedium"
         tools:text="Score" />
+
+    <TextView
+        android:id="@+id/level_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        tools:text="Level" />
 </LinearLayout>

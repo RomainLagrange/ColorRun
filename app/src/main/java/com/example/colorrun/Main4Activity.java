@@ -20,6 +20,7 @@ public class Main4Activity extends AppCompatActivity {
 
     int score;
     String name;
+    String level;
     ListJoueurs listJoueurs = new ListJoueurs();
 
     @Override
@@ -28,6 +29,7 @@ public class Main4Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main4);
         Globals g = Globals.getInstance();
         score = getIntent().getIntExtra("score",0);
+        level = getIntent().getStringExtra("level");
         TextView scoreView = findViewById(R.id.textScore);
         scoreView.setText(String.valueOf(score));
         TextView nameView = findViewById(R.id.textName);
@@ -39,6 +41,7 @@ public class Main4Activity extends AppCompatActivity {
 
     public void savePlayer(Joueur player) throws Exception {
 
+
         try {
             loadPlayer();
         } catch (IOException | ClassNotFoundException e) {
@@ -46,6 +49,7 @@ public class Main4Activity extends AppCompatActivity {
         }
 
         File file = new File(this.getFilesDir().getAbsoluteFile()+File.separator+ "dataPlayer2.dat");
+
 
         FileOutputStream fis = new FileOutputStream(file);
         ObjectOutputStream objectOutStream = new ObjectOutputStream(fis);
@@ -73,7 +77,13 @@ public class Main4Activity extends AppCompatActivity {
     }
 
     public void saveClick(View view) throws Exception {
-        Joueur player = new Joueur(name,score);
+        if (level.equals("h")){
+            level = "Mode 2";
+        }
+        if (level.equals("e")){
+            level = "Mode 1";
+        }
+        Joueur player = new Joueur(name,score, level);
         savePlayer(player);
         AlertDialog dialog = new AlertDialog.Builder(Main4Activity.this)
                 .setTitle(R.string.Information)

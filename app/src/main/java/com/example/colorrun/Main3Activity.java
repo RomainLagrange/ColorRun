@@ -53,6 +53,7 @@ public class Main3Activity extends AppCompatActivity {
             if (count==0){
                 Intent intent=new Intent(Main3Activity.this, Main4Activity.class);
                 intent.putExtra("score", score);
+                intent.putExtra("level",difficulty);
                 startActivity(intent);
                 finish();
             }

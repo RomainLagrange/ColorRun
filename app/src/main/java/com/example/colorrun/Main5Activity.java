@@ -7,19 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.widget.ListView;
-import android.widget.ScrollView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class Main5Activity extends AppCompatActivity {
@@ -65,8 +57,8 @@ public class Main5Activity extends AppCompatActivity {
         } else {
             //Nothing
             ListJoueurs toto = new ListJoueurs();
-            toto.add(new Joueur("Marion",251));
-            toto.add(new Joueur("Julien",25));
+            toto.add(new Joueur("Marion",251, "Normal"));
+            toto.add(new Joueur("Julien",25, "Hard"));
             return toto;
         }
     }

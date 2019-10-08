@@ -53,6 +53,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
         private final TextView name;
         private final TextView score;
+        private final TextView level;
 
         private Joueur currentJoueur;
 
@@ -60,6 +61,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             super(itemView);
             name = ((TextView) itemView.findViewById(R.id.name_player));
             score = ((TextView) itemView.findViewById(R.id.score_player));
+            level = ((TextView) itemView.findViewById(R.id.level_player));
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +80,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             currentJoueur = joueur;
             name.setText(joueur.getName());
             score.setText(String.valueOf(joueur.getScore()));
+            level.setText(String.valueOf(joueur.getLevel()));
         }
     }
 }
