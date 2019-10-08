@@ -54,6 +54,7 @@ public class Main3Activity extends AppCompatActivity {
                 Intent intent=new Intent(Main3Activity.this, Main4Activity.class);
                 intent.putExtra("score", score);
                 startActivity(intent);
+                finish();
             }
             if (count==10){
                 timerTextView.getBackground().setColorFilter(Color.parseColor("#fa3d3d"), PorterDuff.Mode.DARKEN);
@@ -75,7 +76,7 @@ public class Main3Activity extends AppCompatActivity {
     }
 
 
-    public void onClick(View v) {
+    public void clikcStart(View v) {
         Button b = (Button) v;
         b.setEnabled(false);
         startTime = System.currentTimeMillis();
@@ -96,13 +97,6 @@ public class Main3Activity extends AppCompatActivity {
         }
     }
 
-    public void onPause() {
-        super.onPause();
-        timerHandler.removeCallbacks(timerRunnable);
-        Button b = (Button)findViewById(R.id.buttonClock);
-        b.setText("start");
-    }
-
     public void clickBad()
     {
         score--;
@@ -118,20 +112,6 @@ public class Main3Activity extends AppCompatActivity {
         Button sc = findViewById(R.id.Score);
         sc.setText("Score : " + score);
     }
-
-    public void generateRandomColor(Button button, int min, int max){
-        int rand = getRandomNumberInRange(min,max);
-        String randColor = listColor.get(rand);
-        button.getBackground().setColorFilter(Color.parseColor(randColor), PorterDuff.Mode.DARKEN);
-
-    }
-
-    public static int getRandomNumberInRange(int min, int max) {
-
-        return (int)(Math.random() * ((max - min) + 1)) + min;
-
-    }
-
 
     public ArrayList<String> generateColorList(){
         ArrayList<String> colorList = new ArrayList<String>();
@@ -152,6 +132,17 @@ public class Main3Activity extends AppCompatActivity {
             colorList.add("#f705cb");
         }
         return colorList;
+    }
+
+    public static int getRandomNumberInRange(int min, int max) {
+        return (int)(Math.random() * ((max - min) + 1)) + min;
+    }
+
+    public void generateRandomColor(Button button, int min, int max){
+        int rand = getRandomNumberInRange(min,max);
+        String randColor = listColor.get(rand);
+        button.getBackground().setColorFilter(Color.parseColor(randColor), PorterDuff.Mode.DARKEN);
+
     }
 
     public void newResponseColor(){

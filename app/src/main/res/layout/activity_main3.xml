@@ -149,7 +149,7 @@
                 android:id="@+id/buttonClock"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:onClick="onClick"
+                android:onClick="clikcStart"
                 android:text="Start" />
 
             <Button

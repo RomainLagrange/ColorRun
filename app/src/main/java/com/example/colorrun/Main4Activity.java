@@ -86,6 +86,7 @@ public class Main4Activity extends AppCompatActivity {
                         // Continue with delete operation
                         Intent intent = new Intent(Main4Activity.this, Main5Activity.class);
                         startActivity(intent);
+                        finish();
                     }
                 })
 
@@ -99,5 +100,6 @@ public class Main4Activity extends AppCompatActivity {
     public void goActivity2(View view) {
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
+        finish();
     }
 }
