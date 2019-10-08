@@ -57,8 +57,8 @@ public class Main5Activity extends AppCompatActivity {
         } else {
             //Nothing
             ListJoueurs toto = new ListJoueurs();
-            toto.add(new Joueur("Marion",251, "Normal"));
-            toto.add(new Joueur("Julien",25, "Hard"));
+            toto.add(new Joueur("Marion",251, "Mode 1"));
+            toto.add(new Joueur("Julien",25, "Mode 2"));
             return toto;
         }
     }
